@@ -1,0 +1,1 @@
+g++ ./source/secret_santa.cpp -o ./release/secret_santa.exe
