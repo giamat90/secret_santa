@@ -14,6 +14,7 @@ constexpr char esc{27};
 constexpr char enter{13};
 constexpr char yes{'y'};
 constexpr char no{'n'};
+
 // console colors
 enum class CONSOLE_COLOR : int {
     GREEN = 2,
@@ -112,13 +113,13 @@ void insult(){
 
 void erase_previous_row(const int n_rows = 0){
     if(0 == n_rows){
-        std::cout << "\033[1A";
+        std::cout << "\033[1A"; //  ANSI escape sequence for move the cursor up one line
     } else {
         std::string s{};
         s += "\033[" + std::to_string(n_rows) + "A";
         std::cout << s;
     }
-    std::cout << "\x1b[2K";
+    std::cout << "\x1b[2K"; // ANSI escape sequence that erases the entire current line in the terminal
 }
 
 int main() {
